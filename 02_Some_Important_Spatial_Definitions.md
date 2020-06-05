@@ -13,7 +13,7 @@ Takuya Shimamura
   - [E-2.8](#e-2.8)
   - [E-2.9](#e-2.9)
 
-### E-2.1
+## E-2.1
 
 1)  Unweighted W matrix
 
@@ -94,7 +94,7 @@ W_Romania
     ## [7,] 0.3333333
     ## [8,] 0.0000000
 
-### E-2.2
+## E-2.2
 
 1)  Read data
 
@@ -138,7 +138,7 @@ WX
     ## [7,]  9.766667
     ## [8,]  9.366667
 
-### E-2.3
+## E-2.3
 
 1)  Create data `W` and `X`
 
@@ -166,7 +166,7 @@ WX
     ## [15] 20.33333 14.66667 17.50000 14.50000 20.50000 16.00000 14.50000
     ## [22] 15.00000 20.66667 14.00000 21.50000
 
-### E-2.4
+## E-2.4
 
 1)  Read GAL file
 
@@ -204,7 +204,7 @@ nbUK = read.gal("Input/GALfile/UK_GAL.GAL", region.id = UK_reg)
 12 3  
 1 8 11
 
-### E-2.5
+## E-2.5
 
 1)  Read data
 
@@ -251,7 +251,7 @@ LGVA
     ##  [1]  6.700000  2.750000  5.950000  8.233333  5.440000  6.300000
     ##  [7]  9.420000  8.340000 10.450000 14.700000 10.300000  8.533333
 
-### E-2.6
+## E-2.6
 
 ``` r
 plot(GVA, LGVA, main = "Moran Scatterplot") 
@@ -262,7 +262,7 @@ plot(GVA, LGVA, main = "Moran Scatterplot")
 There is a positive correlation between `GVA` and `LGVA` which is its
 spatial value). This suggests spatial correlation for this variable.
 
-### E-2.7
+## E-2.7
 
 1)  Define variables
 
@@ -349,7 +349,7 @@ lm.morantest(reg_GVA, listw = W_UK)
     ## Observed Moran I      Expectation         Variance 
     ##      -0.17589503      -0.16886659       0.03307571
 
-### E-2.8
+## E-2.8
 
 1)  Read data
 
@@ -528,7 +528,7 @@ lm.morantest(reg_24, listw = W_Italy)
     ## Observed Moran I      Expectation         Variance 
     ##       0.19191335      -0.07297302       0.02658878
 
-### E-2.9
+## E-2.9
 
 1)  Download shapefiles  
     Shapefiles can be obtained from [National Cancer
