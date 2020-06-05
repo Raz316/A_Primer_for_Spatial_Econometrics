@@ -3,16 +3,101 @@
 Takuya Shimamura
 2020-06-05
 
-  - [E-2.2](#e-2.2)
-  - [E-2.3](#e-2.3)
-  - [E-2.4](#e-2.4)
-  - [E-2.5](#e-2.5)
-  - [E-2.6](#e-2.6)
-  - [E-2.7](#e-2.7)
-  - [E-2.8](#e-2.8)
-  - [E-2.9](#e-2.9)
+  - [Exercise](#exercise)
+      - [E-2.1](#e-2.1)
+      - [E-2.2](#e-2.2)
+      - [E-2.3](#e-2.3)
+      - [E-2.4](#e-2.4)
+      - [E-2.5](#e-2.5)
+      - [E-2.6](#e-2.6)
+      - [E-2.7](#e-2.7)
+      - [E-2.8](#e-2.8)
+      - [E-2.9](#e-2.9)
 
-## E-2.2
+## Exercise
+
+### E-2.1
+
+1)  Unweighted W matrix
+
+<!-- end list -->
+
+``` r
+Wnb_Romania = matrix(
+  c(0, 1, 1, 0, 0, 0, 0, 1,
+    1, 0, 1, 1, 1, 0, 1, 1,
+    1, 1, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 0, 1, 0, 0, 0,
+    0, 1, 0, 1, 0, 1, 1, 0,
+    0, 0, 0, 0, 1, 0, 0, 0,
+    0, 1, 0, 0, 1, 0, 0, 1,
+    1, 1, 0, 0, 0, 0, 1, 0),
+  nrow = 8,
+  ncol = 8)
+Wnb_Romania
+```
+
+    ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+    ## [1,]    0    1    1    0    0    0    0    1
+    ## [2,]    1    0    1    1    1    0    1    1
+    ## [3,]    1    1    0    1    0    0    0    0
+    ## [4,]    0    1    1    0    1    0    0    0
+    ## [5,]    0    1    0    1    0    1    1    0
+    ## [6,]    0    0    0    0    1    0    0    0
+    ## [7,]    0    1    0    0    1    0    0    1
+    ## [8,]    1    1    0    0    0    0    1    0
+
+2)  Weighted W matrix
+
+<!-- end list -->
+
+``` r
+Wnb_weight = matrix(
+  c(Wrow1 = sum(Wnb_Romania[1, ]),
+    Wrow2 = sum(Wnb_Romania[2, ]),
+    Wrow3 = sum(Wnb_Romania[3, ]),
+    Wrow4 = sum(Wnb_Romania[4, ]),
+    Wrow5 = sum(Wnb_Romania[5, ]),
+    Wrow6 = sum(Wnb_Romania[6, ]),
+    Wrow7 = sum(Wnb_Romania[7, ]),  
+    Wrow8 = sum(Wnb_Romania[8, ])),
+  nrow = 8,
+  ncol = 1)
+
+W_Romania = matrix(
+  c(Wnb_Romania[1,] / Wnb_weight[1,],
+    Wnb_Romania[2,] / Wnb_weight[2,],
+    Wnb_Romania[3,] / Wnb_weight[3,],
+    Wnb_Romania[4,] / Wnb_weight[4,],
+    Wnb_Romania[5,] / Wnb_weight[5,],
+    Wnb_Romania[6,] / Wnb_weight[6,],
+    Wnb_Romania[7,] / Wnb_weight[7,],
+    Wnb_Romania[8,] / Wnb_weight[8,]),
+  nrow = 8,
+  byrow = TRUE)
+W_Romania
+```
+
+    ##           [,1]      [,2]      [,3]      [,4]      [,5] [,6]      [,7]
+    ## [1,] 0.0000000 0.3333333 0.3333333 0.0000000 0.0000000 0.00 0.0000000
+    ## [2,] 0.1666667 0.0000000 0.1666667 0.1666667 0.1666667 0.00 0.1666667
+    ## [3,] 0.3333333 0.3333333 0.0000000 0.3333333 0.0000000 0.00 0.0000000
+    ## [4,] 0.0000000 0.3333333 0.3333333 0.0000000 0.3333333 0.00 0.0000000
+    ## [5,] 0.0000000 0.2500000 0.0000000 0.2500000 0.0000000 0.25 0.2500000
+    ## [6,] 0.0000000 0.0000000 0.0000000 0.0000000 1.0000000 0.00 0.0000000
+    ## [7,] 0.0000000 0.3333333 0.0000000 0.0000000 0.3333333 0.00 0.0000000
+    ## [8,] 0.3333333 0.3333333 0.0000000 0.0000000 0.0000000 0.00 0.3333333
+    ##           [,8]
+    ## [1,] 0.3333333
+    ## [2,] 0.1666667
+    ## [3,] 0.0000000
+    ## [4,] 0.0000000
+    ## [5,] 0.0000000
+    ## [6,] 0.0000000
+    ## [7,] 0.3333333
+    ## [8,] 0.0000000
+
+### E-2.2
 
 1)  Read data
 
@@ -56,7 +141,7 @@ WX
     ## [7,]  9.766667
     ## [8,]  9.366667
 
-## E-2.3
+### E-2.3
 
 1)  Create data `W` and `X`
 
@@ -84,7 +169,7 @@ WX
     ## [15] 20.33333 14.66667 17.50000 14.50000 20.50000 16.00000 14.50000
     ## [22] 15.00000 20.66667 14.00000 21.50000
 
-## E-2.4
+### E-2.4
 
 1)  Read GAL file
 
@@ -122,7 +207,7 @@ nbUK = read.gal("Input/GALfile/UK_GAL.GAL", region.id = UK_reg)
 12 3  
 1 8 11
 
-## E-2.5
+### E-2.5
 
 1)  Read data
 
@@ -169,7 +254,7 @@ LGVA
     ##  [1]  6.700000  2.750000  5.950000  8.233333  5.440000  6.300000
     ##  [7]  9.420000  8.340000 10.450000 14.700000 10.300000  8.533333
 
-## E-2.6
+### E-2.6
 
 ``` r
 plot(GVA, LGVA, main = "Moran Scatterplot") 
@@ -180,7 +265,7 @@ plot(GVA, LGVA, main = "Moran Scatterplot")
 There is a positive correlation between `GVA` and `LGVA` which is its
 spatial value). This suggests spatial correlation for this variable.
 
-## E-2.7
+### E-2.7
 
 1)  Define variables
 
@@ -267,7 +352,7 @@ lm.morantest(reg_GVA, listw = W_UK)
     ## Observed Moran I      Expectation         Variance 
     ##      -0.17589503      -0.16886659       0.03307571
 
-## E-2.8
+### E-2.8
 
 1)  Read data
 
@@ -446,7 +531,7 @@ lm.morantest(reg_24, listw = W_Italy)
     ## Observed Moran I      Expectation         Variance 
     ##       0.19191335      -0.07297302       0.02658878
 
-## E-2.9
+### E-2.9
 
 1)  Download shapefiles  
     Shapefiles can be obtained from [National Cancer
