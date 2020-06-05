@@ -14,6 +14,8 @@ Takuya Shimamura
       - [E-2.8](#e-2.8)
       - [E-2.9](#e-2.9)
 
+.
+
 ## Exercise
 
 ### E-2.1
@@ -78,24 +80,24 @@ W_Romania = matrix(
 W_Romania
 ```
 
-    ##           [,1]      [,2]      [,3]      [,4]      [,5] [,6]      [,7]
-    ## [1,] 0.0000000 0.3333333 0.3333333 0.0000000 0.0000000 0.00 0.0000000
-    ## [2,] 0.1666667 0.0000000 0.1666667 0.1666667 0.1666667 0.00 0.1666667
-    ## [3,] 0.3333333 0.3333333 0.0000000 0.3333333 0.0000000 0.00 0.0000000
-    ## [4,] 0.0000000 0.3333333 0.3333333 0.0000000 0.3333333 0.00 0.0000000
-    ## [5,] 0.0000000 0.2500000 0.0000000 0.2500000 0.0000000 0.25 0.2500000
-    ## [6,] 0.0000000 0.0000000 0.0000000 0.0000000 1.0000000 0.00 0.0000000
-    ## [7,] 0.0000000 0.3333333 0.0000000 0.0000000 0.3333333 0.00 0.0000000
-    ## [8,] 0.3333333 0.3333333 0.0000000 0.0000000 0.0000000 0.00 0.3333333
-    ##           [,8]
-    ## [1,] 0.3333333
-    ## [2,] 0.1666667
-    ## [3,] 0.0000000
-    ## [4,] 0.0000000
-    ## [5,] 0.0000000
-    ## [6,] 0.0000000
-    ## [7,] 0.3333333
-    ## [8,] 0.0000000
+    ##           [,1]      [,2]      [,3]      [,4]      [,5] [,6]
+    ## [1,] 0.0000000 0.3333333 0.3333333 0.0000000 0.0000000 0.00
+    ## [2,] 0.1666667 0.0000000 0.1666667 0.1666667 0.1666667 0.00
+    ## [3,] 0.3333333 0.3333333 0.0000000 0.3333333 0.0000000 0.00
+    ## [4,] 0.0000000 0.3333333 0.3333333 0.0000000 0.3333333 0.00
+    ## [5,] 0.0000000 0.2500000 0.0000000 0.2500000 0.0000000 0.25
+    ## [6,] 0.0000000 0.0000000 0.0000000 0.0000000 1.0000000 0.00
+    ## [7,] 0.0000000 0.3333333 0.0000000 0.0000000 0.3333333 0.00
+    ## [8,] 0.3333333 0.3333333 0.0000000 0.0000000 0.0000000 0.00
+    ##           [,7]      [,8]
+    ## [1,] 0.0000000 0.3333333
+    ## [2,] 0.1666667 0.1666667
+    ## [3,] 0.0000000 0.0000000
+    ## [4,] 0.0000000 0.0000000
+    ## [5,] 0.2500000 0.0000000
+    ## [6,] 0.0000000 0.0000000
+    ## [7,] 0.0000000 0.3333333
+    ## [8,] 0.3333333 0.0000000
 
 ### E-2.2
 
@@ -219,20 +221,20 @@ UK
 ```
 
     ## # A tibble: 12 x 5
-    ##    Country  Region   `GVA (% of UK)` `Labor Productivi~ `Business Birth~
-    ##    <chr>    <chr>              <dbl>              <dbl>            <dbl>
-    ##  1 Wales    <NA>                 3.6               81.5              9.3
-    ##  2 Scotland <NA>                 8.3               96.9             10.9
-    ##  3 Norther~ <NA>                 2.3               82.9              6.5
-    ##  4 England  North o~             3.2               86.2             11.2
-    ##  5 England  North W~             9.5               88.6             11.1
-    ##  6 England  Yorkshi~             6.9               84.7             10.5
-    ##  7 England  East Mi~             6.2               89.2             10.3
-    ##  8 England  West Mi~             7.3               89.1             10.5
-    ##  9 England  East An~             8.7               96.8             10.5
-    ## 10 England  Greater~            21.6              140.              14.6
-    ## 11 England  South E~            14.7              108.              10.8
-    ## 12 England  South W~             7.7               89.8              9.6
+    ##    Country  Region  `GVA (% of UK)` `Labor Producti~ `Business Birth~
+    ##    <chr>    <chr>             <dbl>            <dbl>            <dbl>
+    ##  1 Wales    <NA>                3.6             81.5              9.3
+    ##  2 Scotland <NA>                8.3             96.9             10.9
+    ##  3 Norther~ <NA>                2.3             82.9              6.5
+    ##  4 England  North ~             3.2             86.2             11.2
+    ##  5 England  North ~             9.5             88.6             11.1
+    ##  6 England  Yorksh~             6.9             84.7             10.5
+    ##  7 England  East M~             6.2             89.2             10.3
+    ##  8 England  West M~             7.3             89.1             10.5
+    ##  9 England  East A~             8.7             96.8             10.5
+    ## 10 England  Greate~            21.6            140.              14.6
+    ## 11 England  South ~            14.7            108.              10.8
+    ## 12 England  South ~             7.7             89.8              9.6
 
 2)  Define `GVA` (Gross Value Added) and `W`
 
@@ -444,7 +446,8 @@ lm.morantest(reg_23, listw = W_Italy)
     ## model: lm(formula = UER ~ GDP)
     ## weights: W_Italy
     ## 
-    ## Moran I statistic standard deviate = 2.7139, p-value = 0.003325
+    ## Moran I statistic standard deviate = 2.7139, p-value =
+    ## 0.003325
     ## alternative hypothesis: greater
     ## sample estimates:
     ## Observed Moran I      Expectation         Variance 
@@ -525,7 +528,8 @@ lm.morantest(reg_24, listw = W_Italy)
     ## model: lm(formula = UER ~ PI)
     ## weights: W_Italy
     ## 
-    ## Moran I statistic standard deviate = 1.6245, p-value = 0.05214
+    ## Moran I statistic standard deviate = 1.6245, p-value =
+    ## 0.05214
     ## alternative hypothesis: greater
     ## sample estimates:
     ## Observed Moran I      Expectation         Variance 
@@ -546,7 +550,8 @@ library(maptools)
 US = readShapePoly("Input/US/US_State", IDvar = "OBJECTID")
 ```
 
-    ## Warning: readShapePoly is deprecated; use rgdal::readOGR or sf::st_read
+    ## Warning: readShapePoly is deprecated; use rgdal::readOGR or
+    ## sf::st_read
 
 ``` r
 names(US)
