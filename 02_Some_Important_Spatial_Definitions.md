@@ -3,20 +3,17 @@
 Takuya Shimamura
 2020-06-05
 
-  - [Exercises](#exercises)
-      - [E-2.1](#e-2.1)
-      - [E-2.2](#e-2.2)
-          - [E-2.3](#e-2.3)
-          - [E-2.4](#e-2.4)
-          - [E-2.5](#e-2.5)
-          - [E-2.6](#e-2.6)
-          - [E-2.7](#e-2.7)
-          - [E-2.8](#e-2.8)
-          - [E-2.9](#e-2.9)
+  - [E-2.1](#e-2.1)
+  - [E-2.2](#e-2.2)
+  - [E-2.3](#e-2.3)
+  - [E-2.4](#e-2.4)
+  - [E-2.5](#e-2.5)
+  - [E-2.6](#e-2.6)
+  - [E-2.7](#e-2.7)
+  - [E-2.8](#e-2.8)
+  - [E-2.9](#e-2.9)
 
-# Exercises
-
-## E-2.1
+### E-2.1
 
 1)  Unweighted W matrix
 
@@ -53,18 +50,18 @@ Wnb_Romania
 
 ``` r
 Wnb_weight = matrix(
-  c(Wrow1 <- sum(Wnb_Romania[1, ]),
-    Wrow2 <- sum(Wnb_Romania[2, ]),
-    Wrow3 <- sum(Wnb_Romania[3, ]),
-    Wrow4 <- sum(Wnb_Romania[4, ]),
-    Wrow5 <- sum(Wnb_Romania[5, ]),
-    Wrow6 <- sum(Wnb_Romania[6, ]),
-    Wrow7 <- sum(Wnb_Romania[7, ]),  
-    Wrow8 <- sum(Wnb_Romania[8, ])),
+  c(Wrow1 = sum(Wnb_Romania[1, ]),
+    Wrow2 = sum(Wnb_Romania[2, ]),
+    Wrow3 = sum(Wnb_Romania[3, ]),
+    Wrow4 = sum(Wnb_Romania[4, ]),
+    Wrow5 = sum(Wnb_Romania[5, ]),
+    Wrow6 = sum(Wnb_Romania[6, ]),
+    Wrow7 = sum(Wnb_Romania[7, ]),  
+    Wrow8 = sum(Wnb_Romania[8, ])),
   nrow = 8,
   ncol = 1)
 
-W_Romania <- matrix(
+W_Romania = matrix(
   c(Wnb_Romania[1,] / Wnb_weight[1,],
     Wnb_Romania[2,] / Wnb_weight[2,],
     Wnb_Romania[3,] / Wnb_weight[3,],
@@ -97,7 +94,7 @@ W_Romania
     ## [7,] 0.3333333
     ## [8,] 0.0000000
 
-## E-2.2
+### E-2.2
 
 1)  Read data
 
@@ -152,7 +149,7 @@ library(spdep)
 Wnb = cell2nb(5, 5, type = "rook")
 W = nb2listw(Wnb)
 
-X <- c(27, 16, -1, 23, 19,
+X = c(27, 16, -1, 23, 19,
        36, 21, 32, 33, 26,
        28, 25, 3, 23, 35,
        14, 12, 16, 14, 12,
@@ -160,7 +157,7 @@ X <- c(27, 16, -1, 23, 19,
 ```
 
 ``` r
-WX <- lag.listw(W, X) # X is should not be matrix data
+WX = lag.listw(W, X) # X is should not be matrix data
 WX
 ```
 
@@ -176,8 +173,8 @@ WX
 <!-- end list -->
 
 ``` r
-UK_reg <- c(1:12)
-nbUK <- read.gal("Input/GALfile/UK_GAL.GAL", region.id = UK_reg)
+UK_reg = c(1:12)
+nbUK = read.gal("Input/GALfile/UK_GAL.GAL", region.id = UK_reg)
 ```
 
 `GAL file`  
@@ -219,20 +216,20 @@ UK
 ```
 
     ## # A tibble: 12 x 5
-    ##    Country  Region   `GVA (% of UK)` `Labor Productiv~ `Business Birth~
-    ##    <chr>    <chr>              <dbl>             <dbl>            <dbl>
-    ##  1 Wales    <NA>                 3.6              81.5              9.3
-    ##  2 Scotland <NA>                 8.3              96.9             10.9
-    ##  3 Norther~ <NA>                 2.3              82.9              6.5
-    ##  4 England  North o~             3.2              86.2             11.2
-    ##  5 England  North W~             9.5              88.6             11.1
-    ##  6 England  Yorkshi~             6.9              84.7             10.5
-    ##  7 England  East Mi~             6.2              89.2             10.3
-    ##  8 England  West Mi~             7.3              89.1             10.5
-    ##  9 England  East An~             8.7              96.8             10.5
-    ## 10 England  Greater~            21.6             140.              14.6
-    ## 11 England  South E~            14.7             108.              10.8
-    ## 12 England  South W~             7.7              89.8              9.6
+    ##    Country  Region   `GVA (% of UK)` `Labor Productivi~ `Business Birth~
+    ##    <chr>    <chr>              <dbl>              <dbl>            <dbl>
+    ##  1 Wales    <NA>                 3.6               81.5              9.3
+    ##  2 Scotland <NA>                 8.3               96.9             10.9
+    ##  3 Norther~ <NA>                 2.3               82.9              6.5
+    ##  4 England  North o~             3.2               86.2             11.2
+    ##  5 England  North W~             9.5               88.6             11.1
+    ##  6 England  Yorkshi~             6.9               84.7             10.5
+    ##  7 England  East Mi~             6.2               89.2             10.3
+    ##  8 England  West Mi~             7.3               89.1             10.5
+    ##  9 England  East An~             8.7               96.8             10.5
+    ## 10 England  Greater~            21.6              140.              14.6
+    ## 11 England  South E~            14.7              108.              10.8
+    ## 12 England  South W~             7.7               89.8              9.6
 
 2)  Define `GVA` (Gross Value Added) and `W`
 
@@ -240,14 +237,14 @@ UK
 
 ``` r
 GVA = UK$`GVA (% of UK)` # GVA: Gross Value Added
-W_UK <- nb2listw(nbUK)
+W_UK = nb2listw(nbUK)
 ```
 
 3)  
 <!-- end list -->
 
 ``` r
-LGVA <- lag.listw(W_UK, GVA) 
+LGVA = lag.listw(W_UK, GVA) 
 LGVA
 ```
 
@@ -276,7 +273,7 @@ GVA = UK$`GVA (% of UK)` # GVA: Gross Value Added
 LP = UK$`Labor Productivity (UK = 100)` # LP: Labor Productivity
 BBR = UK$`Business Birth Rate (%)` # BBR: Business Birth Rate
 
-reg_GVA <- lm(GVA ~ LP + BBR)
+reg_GVA = lm(GVA ~ LP + BBR)
 summary(reg_GVA)
 ```
 
@@ -378,7 +375,7 @@ W_Italy = nb2listw(nbItaly)
 <!-- end list -->
 
 ``` r
-reg_23 <- lm(UER ~ GDP)
+reg_23 = lm(UER ~ GDP)
 summary(reg_23)
 ```
 
@@ -444,8 +441,7 @@ lm.morantest(reg_23, listw = W_Italy)
     ## model: lm(formula = UER ~ GDP)
     ## weights: W_Italy
     ## 
-    ## Moran I statistic standard deviate = 2.7139, p-value =
-    ## 0.003325
+    ## Moran I statistic standard deviate = 2.7139, p-value = 0.003325
     ## alternative hypothesis: greater
     ## sample estimates:
     ## Observed Moran I      Expectation         Variance 
@@ -460,7 +456,7 @@ lm.morantest(reg_23, listw = W_Italy)
 <!-- end list -->
 
 ``` r
-reg_24 <- lm(UER ~ PI)
+reg_24 = lm(UER ~ PI)
 summary(reg_24)
 ```
 
@@ -544,7 +540,7 @@ lm.morantest(reg_24, listw = W_Italy)
 
 ``` r
 library(maptools)
-US <- readShapePoly("Input/US/US_State", IDvar = "OBJECTID")
+US = readShapePoly("Input/US/US_State", IDvar = "OBJECTID")
 ```
 
     ## Warning: readShapePoly is deprecated; use rgdal::readOGR or sf::st_read
