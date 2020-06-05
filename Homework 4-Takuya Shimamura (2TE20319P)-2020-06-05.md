@@ -3,6 +3,28 @@ Homework 4
 Takuya Shimamura (2TE20319P)
 6/5/2020
 
+  - [Task 4-1](#task-4-1)
+      - [1) Read data](#read-data)
+      - [2) Box plot](#box-plot)
+      - [3) ANOVA](#anova)
+      - [4) Multiple comparisons of
+        means](#multiple-comparisons-of-means)
+      - [5) Visualize](#visualize)
+  - [Task 4-2](#task-4-2)
+      - [1) Read data](#read-data-1)
+      - [2) Box plot](#box-plot-1)
+      - [3) ANOVA](#anova-1)
+      - [4) Multiple comparisons of
+        means](#multiple-comparisons-of-means-1)
+      - [5) Visualize](#visualize-1)
+  - [Task 4-3](#task-4-3)
+      - [1) Read data](#read-data-2)
+      - [2) Box plot](#box-plot-2)
+      - [3) ANOVA](#anova-2)
+      - [4) Multiple comparisons of
+        means](#multiple-comparisons-of-means-2)
+      - [5) Visualize](#visualize-2)
+
 ## Task 4-1
 
 ### 1\) Read data
