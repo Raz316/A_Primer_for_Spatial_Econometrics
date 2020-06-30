@@ -163,8 +163,8 @@ WX = lag.listw(W, X) # X is should not be matrix data
 WX
 ```
 
-    ##  [1] 26.00000 15.66667 23.66667 17.00000 24.50000 25.33333 27.25000 14.00000 26.00000 29.00000 25.00000 16.00000 24.00000 21.25000 20.33333 14.66667 17.50000 14.50000 20.50000 16.00000
-    ## [21] 14.50000 15.00000 20.66667 14.00000 21.50000
+    ##  [1] 26.00000 15.66667 23.66667 17.00000 24.50000 25.33333 27.25000 14.00000 26.00000 29.00000 25.00000 16.00000 24.00000 21.25000 20.33333 14.66667
+    ## [17] 17.50000 14.50000 20.50000 16.00000 14.50000 15.00000 20.66667 14.00000 21.50000
 
 ## Exercise 2.4
 
@@ -536,22 +536,7 @@ Institute](https://gis.cancer.gov/tools/seerstat_bridge/fips_vars/#statefips).
 
 ``` r
 library(maptools)
-```
-
-    ## Warning: package 'maptools' was built under R version 3.6.3
-
-    ## Checking rgeos availability: FALSE
-    ##      Note: when rgeos is not available, polygon geometry     computations in maptools depend on gpclib,
-    ##      which has a restricted licence. It is disabled by default;
-    ##      to enable gpclib, type gpclibPermit()
-
-``` r
 US = readShapePoly("Input/US/US_State", IDvar = "OBJECTID")
-```
-
-    ## Warning: readShapePoly is deprecated; use rgdal::readOGR or sf::st_read
-
-``` r
 names(US)
 ```
 
