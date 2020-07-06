@@ -38,7 +38,7 @@ library(splm)      # panel data
 library(spgwr)     # non-stationary
 library(lmtest)    # test linear regression models
 library(tseries)   # time-series (JB test)
-library(maptools)  #
+library(maptools)  
 ```
 
 ## Example 4.1 Heteroscedastic
@@ -124,7 +124,8 @@ summary(SARAR_GS2SLS)
 ```
 
     ## 
-    ## Call:gstsls(formula = crime ~ income + houseValue, data = df_Ohio,     listw = W_Ohio)
+    ## Call:gstsls(formula = crime ~ income + houseValue, data = df_Ohio, 
+    ##     listw = W_Ohio)
     ## 
     ## Residuals:
     ##       Min        1Q    Median        3Q       Max 
@@ -378,18 +379,33 @@ summary(Probit)
 
 <!-- end list -->
 
-``` r
-library(stargazer)
-stargazer(
-  Logit, Probit,
-  type = "text",
-  column.labels = c("logit model", "probit model"),
-  dep.var.caption="Dependent variable",
-  dep.var.labels.include = FALSE,
-  model.numbers = FALSE,
-  model.names = FALSE
-)
-```
+    ## 
+    ## ==============================================
+    ##                        Dependent variable     
+    ##                   ----------------------------
+    ##                    logit model   probit model 
+    ## ----------------------------------------------
+    ## nroom                0.526**        0.253**   
+    ##                      (0.232)        (0.128)   
+    ##                                               
+    ## nbath                 0.567         0.366*    
+    ##                      (0.351)        (0.204)   
+    ##                                               
+    ## age                 -0.052***      -0.021***  
+    ##                      (0.012)        (0.006)   
+    ##                                               
+    ## sqft                 0.107***      0.058***   
+    ##                      (0.036)        (0.020)   
+    ##                                               
+    ## Constant            -3.788***      -2.162***  
+    ##                      (1.019)        (0.567)   
+    ##                                               
+    ## ----------------------------------------------
+    ## Observations           211            211     
+    ## Log Likelihood       -108.317      -111.224   
+    ## Akaike Inf. Crit.    226.635        232.447   
+    ## ==============================================
+    ## Note:              *p<0.1; **p<0.05; ***p<0.01
 
 ## Example 4.3 Discrete (Spatial Probit)
 
@@ -514,13 +530,20 @@ df_1970_1974 <- subset(df_all, year >= 1970 & year <= 1974)
 head(df_1970_1974)
 ```
 
-    ##      state year region     pcap     hwy   water    util       pc   gsp    emp unemp
-    ## 1  ALABAMA 1970      6 15032.67 7325.80 1655.68 6051.20 35793.80 28418 1010.5   4.7
-    ## 2  ALABAMA 1971      6 15501.94 7525.94 1721.02 6254.98 37299.91 29375 1021.9   5.2
-    ## 3  ALABAMA 1972      6 15972.41 7765.42 1764.75 6442.23 38670.30 31303 1072.3   4.7
-    ## 4  ALABAMA 1973      6 16406.26 7907.66 1742.41 6756.19 40084.01 33430 1135.5   3.9
-    ## 5  ALABAMA 1974      6 16762.67 8025.52 1734.85 7002.29 42057.31 33749 1169.8   5.5
-    ## 18 ARIZONA 1970      8 10148.42 4556.81 1627.87 3963.75 23585.99 19288  547.4   4.4
+    ##      state year region     pcap     hwy   water    util       pc   gsp    emp
+    ## 1  ALABAMA 1970      6 15032.67 7325.80 1655.68 6051.20 35793.80 28418 1010.5
+    ## 2  ALABAMA 1971      6 15501.94 7525.94 1721.02 6254.98 37299.91 29375 1021.9
+    ## 3  ALABAMA 1972      6 15972.41 7765.42 1764.75 6442.23 38670.30 31303 1072.3
+    ## 4  ALABAMA 1973      6 16406.26 7907.66 1742.41 6756.19 40084.01 33430 1135.5
+    ## 5  ALABAMA 1974      6 16762.67 8025.52 1734.85 7002.29 42057.31 33749 1169.8
+    ## 18 ARIZONA 1970      8 10148.42 4556.81 1627.87 3963.75 23585.99 19288  547.4
+    ##    unemp
+    ## 1    4.7
+    ## 2    5.2
+    ## 3    4.7
+    ## 4    3.9
+    ## 5    5.5
+    ## 18   4.4
 
 #### 2\) Regression
 
@@ -788,7 +811,9 @@ summary(SLM_GMM)
 ```
 
     ## 
-    ## Call:spgm(formula = log(gsp) ~ log(pcap) + log(pc) + log(emp) + unemp,     data = Produc, listw = W_US, model = "random", lag = TRUE,     spatial.error = FALSE)
+    ## Call:spgm(formula = log(gsp) ~ log(pcap) + log(pc) + log(emp) + unemp, 
+    ##     data = Produc, listw = W_US, model = "random", lag = TRUE, 
+    ##     spatial.error = FALSE)
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
@@ -971,7 +996,9 @@ summary(SLM_FE_GMM)
 ```
 
     ## 
-    ## Call:spgm(formula = log(gsp) ~ log(pcap) + log(pc) + log(emp) + unemp,     data = Produc, listw = W_US, model = "within", lag = TRUE,     spatial.error = FALSE)
+    ## Call:spgm(formula = log(gsp) ~ log(pcap) + log(pc) + log(emp) + unemp, 
+    ##     data = Produc, listw = W_US, model = "within", lag = TRUE, 
+    ##     spatial.error = FALSE)
     ## 
     ## Residuals:
     ##        Min         1Q     Median         3Q        Max 
